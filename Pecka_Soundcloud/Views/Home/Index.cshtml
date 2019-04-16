@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Pecka_Soundcloud.Entities.Album>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to SoundCloud 2</h1>
+    <a asp-action="Create" asp-controller="Interprets" class="btn btn-primary">New Interpret</a>
+    <a asp-action="Create" asp-controller="Songs" class="btn btn-primary">New Song</a>
+    <a asp-action="Create" asp-controller="Albums" class="btn btn-primary">New Album</a>
+    @foreach (var album in Model)
+    {
+        <h4>
+            Album: @album.Name, @album.ReleaseDate
+            <a asp-action="Edit" asp-controller="Interprets" class="btn btn-warning" asp-route-id="@album.Id">Edit</a>
+            <a asp-action="Create" asp-controller="Songs" class="btn btn-warning" asp-route-preselectedBrand="@album.Id">Add Song</a>
+        </h4>
+        foreach (var song in album.Songs)
+        {
+            <p>@song.Name, @song.ReleaseDate, @song.Type, @song.Interpret  </p>
+            <a asp-action="Edit" asp-controller="Songs" class="btn btn-warning" asp-route-id="@song.Id">Edit</a>
+        }
+    }
+</div>
