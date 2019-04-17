@@ -21,7 +21,7 @@ namespace Pecka_Soundcloud.Models
             set;
         }
         [Required]
-        [DisplayName("Jméno")]
+        [DisplayName("Name")]
         public string Name
         {
             get;

@@ -50,7 +50,7 @@ namespace Pecka_Soundcloud.Controllers
         public IActionResult Create()
         {
             ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Name");
-            ViewData["InterpretId"] = new SelectList(_context.Interprets, "Id", "Country");
+            ViewData["InterpretId"] = new SelectList(_context.Interprets, "Id", "Name");
             return View();
         }
 
@@ -68,7 +68,7 @@ namespace Pecka_Soundcloud.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Name", song.AlbumId);
-            ViewData["InterpretId"] = new SelectList(_context.Interprets, "Id", "Country", song.InterpretId);
+            ViewData["InterpretId"] = new SelectList(_context.Interprets, "Id", "Name", song.InterpretId);
             return View(song);
         }
 
