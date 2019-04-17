@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Pecka_Soundcloud.Data;
 using Pecka_Soundcloud.Entities;
+using Pecka_Soundcloud.Models;
 
 namespace Pecka_Soundcloud.Controllers
 {
@@ -51,7 +52,13 @@ namespace Pecka_Soundcloud.Controllers
         {
             ViewData["AlbumId"] = new SelectList(_context.Albums, "Id", "Name");
             ViewData["InterpretId"] = new SelectList(_context.Interprets, "Id", "Name");
-            return View();
+
+            var model = new SongCreatorViewModel();
+
+            model.Albums = _context.Albums.ToDictionary(v => v.Id, v => v.Name);
+            model.Interprets = _context.Interprets.ToDictionary(v => v.Id, v => v.Name);
+
+            return View(model);
         }
 
         // POST: Songs/Create

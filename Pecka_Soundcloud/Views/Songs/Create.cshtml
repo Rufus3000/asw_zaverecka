@@ -1,4 +1,6 @@
-﻿@model Pecka_Soundcloud.Entities.Song
+﻿@using Pecka_Soundcloud.Code
+@using Pecka_Soundcloud.Models
+@model Pecka_Soundcloud.Models.SongCreatorViewModel
 
 @{
     ViewData["Title"] = "Create";
@@ -24,16 +26,18 @@
             </div>
             <div class="form-group">
                 <label asp-for="Type" class="control-label"></label>
-                <select asp-for="Type" class="form-control"></select>
+                <select asp-for="Type" asp-items="Html.GetEnumSelectList(typeof(SongGenre))" class="form-control"></select>
                 <span asp-validation-for="Type" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="AlbumId" class="control-label"></label>
-                <select asp-for="AlbumId" class ="form-control" asp-items="ViewBag.AlbumId"></select>
+                <select asp-for="AlbumId" asp-items="@(new SelectList(Model.Albums, "Key", "Value"))" class="form-control"></select>
+                <span asp-validation-for="AlbumId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="InterpretId" class="control-label"></label>
-                <select asp-for="InterpretId" class ="form-control" asp-items="ViewBag.InterpretId"></select>
+                <select asp-for="InterpretId" asp-items="@(new SelectList(Model.Interprets, "Key", "Value"))" class="form-control"></select>
+                <span asp-validation-for="InterpretId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

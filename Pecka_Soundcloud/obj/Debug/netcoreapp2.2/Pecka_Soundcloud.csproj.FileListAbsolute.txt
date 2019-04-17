@@ -50,3 +50,4 @@ C:\Users\janpe\source\repos\Pecka_Soundcloud\Pecka_Soundcloud\obj\Debug\netcorea
 C:\Users\janpe\source\repos\Pecka_Soundcloud\Pecka_Soundcloud\obj\Debug\netcoreapp2.2\Pecka_Soundcloud.dll
 C:\Users\janpe\source\repos\Pecka_Soundcloud\Pecka_Soundcloud\obj\Debug\netcoreapp2.2\Pecka_Soundcloud.pdb
 C:\Users\janpe\source\repos\Pecka_Soundcloud\Pecka_Soundcloud\obj\Debug\netcoreapp2.2\Pecka_Soundcloud.csproj.CopyComplete
+C:\Users\janpe\source\repos\Pecka_Soundcloud\Pecka_Soundcloud\obj\Debug\netcoreapp2.2\Pecka_Soundcloud.csprojAssemblyReference.cache
